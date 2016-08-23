@@ -12,7 +12,13 @@
     int main (void) {
 	    
 	    led_ddr |= (1 << led_pin);
-	    led_prt |= (1 << led_pin); 
+	    led_prt |= (1 << led_pin);  
+		
+		while (1){
+			
+			_delay_ms(1000); 
+			led_prt ^= (1 << led_pin);
+		}
 		
     }
     
