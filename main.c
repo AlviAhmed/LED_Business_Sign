@@ -18,8 +18,10 @@
    #define sec2 (1 << PD3) 
    #define sec3 (1 << PC5) 
    #define sec4 (1 << PC4)
-   #define lst_led (1 << PD2)
-   int index = 0, on_led = 4, lst_lednum = 32, lst_led2num = 65;
+   #define lst_led (1 << PD2) 
+	  
+   int clk_index = 0, on_led = 4, num1 = 32, num2 = 65, y = 0; 
+   int sec_array[] = {0,14,32,47,65};
    // Section 1 : LEDS  0-14 
    // Section 2 : LEDS 15-32 
    // Section 3 : LEDS 33-47 
@@ -32,9 +34,9 @@
 
 	//Initial Values of Variables before main function 
 
-	   prt1 &= ~ ( data_pin | clock_pin | latch_pin | sec2 );  
-	   prt2 &= ~ ( sec3 | sec4 )
-	   prt1 |= (1 << sec1); 
+	   prt1 &= ~ ( data_pin | clock_pin | latch_pin | lst_led);  
+	   prt2 &= ~ ( sec3 | sec4);
+	   prt1 |= ( sec1 | sec2 ); 
 	   
 	   TCCR1B |= (1 << WGM12); // ctc mode configuration
 	   TIMSK1 |= (1 << OCIE1A); // enable interrupt
@@ -43,54 +45,50 @@
 	   TCCR1B |= (1 << CS12 ); //prescaler 256
 	   while (1)
 	   {  
-		     if (sec_num == 0 && bark == 1){
-			     tot_prt &= ~ (1 << sec2); //Turn on the next section of leds
-			     tot_prt |= (1 << sec1); //Turn off the next section of leds
-			     sec_num = 1; 
-				 mark = 0; 
-				 bark = 0;
-		     }
-		     if (sec_num == 1 && bark == 1){
-			     tot_prt &= ~ (1 << sec1);
-			     tot_prt |= (1 << sec2);
-			     sec_num = 0; 
-				 mark = 0; 
-				 bark = 0;
-		     }
-		  
-		   
-	   }
-	   
-   }
+		    for (y = 0; y <= on_led; y ++){ 
+		    	switch ( sec_array[y] ){ 
+		    		case 14:  
+		    			prt1 |= sec1;  
+		    			prt2 &= ~ sec3; 
+		    		case 32:  
+		    			lastled();
+		    			prt1 |= lst_led;  
+		    			prt2 ^= sec3; 
+		    			prt1 ^= sec1;  
+		    		case 47: 
+		    			prt2 |= sec4;
+		    			prt1 &= ~ sec2; 
+		    		case 65: 
+		    			lastled(); 
+		    			prt1 ^= sec1;
+		    			prt2 ^= sec3; 
+		    			clk_index = 0; 
+		    			y = 0;}}}}
    
    
    ISR (TIMER1_COMPA_vect){  
-	   //
-	   if (count == 0){
-		   tot_prt |= (1 << data_pin); 
-		   tot_prt |= (1 << clock_pin);
-		}
-	   if (count > 0 ){
-		   tot_prt &= ~ (1 << data_pin);
-		   tot_prt |= (1 << clock_pin); 
-		}   
-		//
-		tot_prt &= ~ (1 << clock_pin);
-		latchpulse();
-		count ++; 
-		tot_prt &= ~ (1 << lst_led); 
-		if (mark == 1){
-			bark = 1;
-		}
-		if (count > 32){ 
-		   tot_prt |= (1 << lst_led); 
-		 count = 0; 
-		  mark = 1;
-		}
+	  if (clk_index < on_led){ 
+	  	prt1 |= data_pin;
+	  } 
+	  else { prt1 |= data_pin;}  
+	  latchpulse();
+	  clk_index++;
 	   
    } 
    
    void latchpulse (){
-	   tot_prt |= (1 << latch_pin);
-	   tot_prt &=~ (1 << latch_pin);
+	   prt1 |= latch_pin;  
+	   prt1 &= ~ latch_pin;
+	} 
+
+	void lastled() {  
+
+		prt1 |= lst_led; 
+		if (clk_index == (num1 + 4)){  
+			prt1 &= ~ lst_led;
+		} 
+		if ( clk_index == ( (num2 - (num2 + 1)) + 4) ){ 
+			prt1 &= ~ lst_led;
+		}
+
 	}

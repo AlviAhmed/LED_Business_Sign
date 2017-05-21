@@ -1,0 +1,2 @@
+avr-gcc -Wall -Os -DF_CPU=16000000 -mmcu=atmega328p -o main.elf main.c
+Makefile:46: recipe for target 'main.elf' failed
