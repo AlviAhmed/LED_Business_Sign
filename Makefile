@@ -1,6 +1,6 @@
 DEVICE     = atmega328p
 CLOCK      = 16000000
-PROGRAMMER = -c avrispmkII  -P /dev/ttyACM0 -b 32400
+PROGRAMMER = -c avrispmkII  -P /dev/ttyACM0   -b 32400
 OBJECTS    = main.c
 FUSES      = -U lfuse:w:0xe2:m -U hfuse:w:0xd9:m -U efuse:w:0xff:m
 
