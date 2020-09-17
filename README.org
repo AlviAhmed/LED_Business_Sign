@@ -1,0 +1,106 @@
+* #+LaTeX_CLASS: mycustom 
+
+#+TITLE: Shift Register Business Sign
+#+AUTHOR: Alvi Ahmed
+
+*Status:* Shelved
+*Type:* Personal Project
+
+
+* Overview
+
+Created an LED sign capable of different patterns and functionalities
+using nothing but glue logic and passive components.  
+
+The user is able to input there own patterns that can flash across the
+LEDs or have a default pattern show up on the sign, in the case the
+user does not have time to input there own patterns
+
+The user can also control how fast the LEDs light up. 
+
+Since I wanted to challenge myself to build this sign from scratch, I
+hand soldered the leds together in a certain array where there are 2
+sections present.   
+
+The schematics for both the control board and the led array can be
+seen below
+
+* Schematics 
+
+[[file:images/controlboard.png]]
+
+This is an image of the schematic that was eventually developed for
+the sign.  
+
+[[file:images/ledarrayschematic.png]] 
+
+This is an image of the schematic that used for the hand made led
+array 
+
+* Demo Results 
+
+** First Demo 
+
+Video of the first demo can be seen here: [[https://youtu.be/cdphiLlvBuQ]] 
+
+
+** Second Demo
+ 
+You may have noticed that in the previous showcase, the leds are very
+bright. To make this sign more user friendly I added foam on top of
+the leds in order to diffuse and dim the light. Also everything is now
+attached to perf board and the result is a small control board for the
+sign. Unfortunately, my AND gate was damaged so I couldn't use the
+repeat function for the user input, but the default mode works fine.  
+
+
+Video of the second demo can be seen here: [[https://youtu.be/onT0IpOB7MI]] 
+
+It has been about a week that the sign was in the shop, it was
+successful in getting the customers attention however there have been
+a few downsides:   
+
+ - It is heavy and bulky due to the huge battery pack and perboard
+ - Sometimes it can be a bit finicky, when ever it gets slightly
+   bumped or the wires are touched, the pattern jumps a little bit or flickers
+ - Drains through power quickly  
+
+My next plan for this project will be to buy an addressable led or
+even an RGB led strip and program it with an atmega328p. It has been
+fun building this whole sign from scratch but the sign is unreliable
+and doesn't last for long. Hopefully with being able to use a
+microcontroller and an led strip I will be able to save on power and
+make everything more stable and less finicky. 
+
+
+
+
+** Demo of Different Version of Sign 
+
+Link to code for this type of sign:
+https://github.com/AlviAhmed/rgb_sign 
+
+This project is a project between the Shift-Register-Sign and my next
+planned project which are addressable rgb led strips. The store needed
+a sign quickly and since my shift register sign had a lot of bugs
+(mainly due to the finicky nature of hardware). I needed a stable
+option. In this project I made a sign that simply faded in and out of
+colours as simple as possible. 
+
+https://youtu.be/e46bOLZom4c
+
+* Conclusion 
+
+For now this project will be shelved, I will continue this project
+once I learn more about programming in AVR. Instead of going through
+the headache of soldering my own leds one by one, as well as soldering
+the shift registers and other ICs, I will be using an addressable RGB
+ledstrip. This along with programming everything with the AVR, will
+save me a lot of time and will also reduce the space taken up on the
+sign. For my first time using just logic and hardware it was a great
+experience! 
+
+
+
+
+All the files in this repository has been licensed under CC BY-NC-SA 4.0

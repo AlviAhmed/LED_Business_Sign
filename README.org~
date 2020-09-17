@@ -1,0 +1,14 @@
+* #+LaTeX_CLASS: mycustom 
+
+#+TITLE: LED Business Sign
+#+AUTHOR: Alvi Ahmed
+
+*Status:* Completed 
+*Type:* Personal Project
+
+
+* Overview
+
+Created an LED sign capable of different patterns and functionalities
+using nothing but glue logic and passive components 
+
