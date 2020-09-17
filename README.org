@@ -111,7 +111,7 @@ a sign quickly and since my shift register sign had a lot of bugs
 option. In this project I made a sign that simply faded in and out of
 colours as simple as possible. 
 
-https://youtu.be/e46bOLZom4c
+Video of the third demo: https://youtu.be/e46bOLZom4c
 
 * Conclusion 
 
