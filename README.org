@@ -1,4 +1,4 @@
-* #+LaTeX_CLASS: mycustom 
+#+LaTeX_CLASS: mycustom 
 
 #+TITLE: Shift Register Business Sign
 #+AUTHOR: Alvi Ahmed
@@ -24,6 +24,30 @@ sections present.
 
 The schematics for both the control board and the led array can be
 seen below
+
+* Initial Plan 
+
+The goal of this project was to create a sign that could catch the
+customers attention and direct the customers attention to the
+promotional offer.
+
+Therefore the sign will have two areas, the main square part where all
+the leds and the main message will go.
+
+And a second part off to the side of the main square, which is a bit
+longer than the message square in order to fit the size of the
+receipt.
+
+I made the sign orange in order to match the colours of the company,
+and I chose blue leds, since blue and orange complement each
+other. Thus making the sign stand out more.  
+
+
+[[file:pizzapizza%20ad%20measurements.png]] 
+
+Image of the measurements of the sign 
+
+
 
 * Schematics 
 
