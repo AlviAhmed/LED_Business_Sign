@@ -3,7 +3,7 @@
 #+TITLE: Shift Register Business Sign
 #+AUTHOR: Alvi Ahmed
 
-*Status:* Shelved
+*Status:* Completed
 *Type:* Personal Project
 
 
