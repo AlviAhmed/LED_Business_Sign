@@ -38,7 +38,7 @@ And a second part off to the side of the main square, which is a bit
 longer than the message square in order to fit the size of the
 receipt.
 
-I made the sign orange in order to match the colours of the company,
+I made the sign orange in order to match the colors of the company,
 and I chose blue leds, since blue and orange complement each
 other. Thus making the sign stand out more.  
 
@@ -84,7 +84,7 @@ It has been about a week that the sign was in the shop, it was
 successful in getting the customers attention however there have been
 a few downsides:   
 
- - It is heavy and bulky due to the huge battery pack and perboard
+ - It is heavy and bulky due to the huge battery pack and perfboard
  - Sometimes it can be a bit finicky, when ever it gets slightly
    bumped or the wires are touched, the pattern jumps a little bit or flickers
  - Drains through power quickly  
@@ -109,7 +109,7 @@ planned project which are addressable rgb led strips. The store needed
 a sign quickly and since my shift register sign had a lot of bugs
 (mainly due to the finicky nature of hardware). I needed a stable
 option. In this project I made a sign that simply faded in and out of
-colours as simple as possible. 
+colors as simple as possible. 
 
 Video of the third demo: https://youtu.be/e46bOLZom4c
 * Conclusion 
@@ -118,7 +118,7 @@ For now this project will be shelved, I will continue this project
 once I learn more about programming in AVR. Instead of going through
 the headache of soldering my own leds one by one, as well as soldering
 the shift registers and other ICs, I will be using an addressable RGB
-ledstrip. This along with programming everything with the AVR, will
+led strip. This along with programming everything with the AVR, will
 save me a lot of time and will also reduce the space taken up on the
 sign. For my first time using just logic and hardware it was a great
 experience! 
