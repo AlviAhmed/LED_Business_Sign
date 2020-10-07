@@ -3,7 +3,7 @@
 #+TITLE: Shift Register Business Sign
 #+AUTHOR: Alvi Ahmed
 
-*Status:* Shelved
+*Status:* Completed
 *Type:* Personal Project
 
 
@@ -110,9 +110,7 @@ a sign quickly and since my shift register sign had a lot of bugs
 (mainly due to the finicky nature of hardware). I needed a stable
 option. In this project I made a sign that simply faded in and out of
 colors as simple as possible. 
-
-Video of the demo of the different version:  https://youtu.be/e46bOLZom4c
-
+Video of the third demo: https://youtu.be/e46bOLZom4c
 * Conclusion 
 
 For now this project will be shelved, I will continue this project
@@ -123,8 +121,4 @@ led strip. This along with programming everything with the AVR, will
 save me a lot of time and will also reduce the space taken up on the
 sign. For my first time using just logic and hardware it was a great
 experience! 
-
-
-
-
 
