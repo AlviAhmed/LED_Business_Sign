@@ -112,7 +112,6 @@ option. In this project I made a sign that simply faded in and out of
 colours as simple as possible. 
 
 Video of the third demo: https://youtu.be/e46bOLZom4c
-
 * Conclusion 
 
 For now this project will be shelved, I will continue this project
@@ -125,6 +124,3 @@ sign. For my first time using just logic and hardware it was a great
 experience! 
 
 
-
-
-All the files in this repository has been licensed under CC BY-NC-SA 4.0
